@@ -4,10 +4,9 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-abstract class ScienceModule {
-
+abstract class PureMathModule2 {
     @Provides
-    static Science provideScience() {
-        return new Science();
+    static Math provideMath(PureMath pureMath) {
+        return pureMath;
     }
 }

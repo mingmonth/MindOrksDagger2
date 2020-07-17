@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void beforeApplyDI() {
-        Math math = new Math();
+        //Math math = new Math();
+        Math math = new PureMath();
         Science science = new Science();
         Subject subject = new Subject(math, science);
         subject.read();
