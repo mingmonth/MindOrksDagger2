@@ -2,7 +2,7 @@ package yskim.sample.mindorksdagger2;
 
 import dagger.Component;
 
-@Component(modules = {ScienceModule.class, PureMathModule3.class})
+@Component(modules = {ScienceModule.class, BusinessMathModule.class})
 public interface SubjectComponent {
 
     Subject getSubject();

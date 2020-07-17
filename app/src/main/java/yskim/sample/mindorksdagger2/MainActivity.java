@@ -16,8 +16,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        afterApplyDI();
         //beforeApplyDI();
+        //afterApplyDI();
+        afterApplyDI2();
+
+    }
+
+    private void afterApplyDI2() {
+        DaggerSubjectComponent2.builder()
+                .pureMathModule(new PureMathModule("ABC"))
+                .build()
+                .inject(this);
+        subject.read();
 
     }
 
@@ -29,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void beforeApplyDI() {
         //Math math = new Math();
-        Math math = new PureMath();
+        //Math math = new PureMath();
+        Math math = new BusinessMath();
         Science science = new Science();
         Subject subject = new Subject(math, science);
         subject.read();

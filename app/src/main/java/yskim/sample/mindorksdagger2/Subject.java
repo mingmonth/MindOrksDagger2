@@ -18,6 +18,7 @@ public class Subject {
     }
     
     public void read() {
+        math.mathBook();
         Log.d(TAG, "read: math:" + math);
         Log.d(TAG, "read: science:" + science);
     }
