@@ -18,8 +18,17 @@ public class MainActivity extends AppCompatActivity {
 
         //beforeApplyDI();
         //afterApplyDI();
-        afterApplyDI2();
+        //afterApplyDI2();
+        afterApplyDI3();
 
+    }
+
+    private void afterApplyDI3() {
+        DaggerSubjectComponent3.builder()
+                .bookName("ABC")
+                .build()
+                .inject(this);
+        subject.read();
     }
 
     private void afterApplyDI2() {
