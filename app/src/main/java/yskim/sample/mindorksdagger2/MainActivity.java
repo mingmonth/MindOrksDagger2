@@ -19,8 +19,18 @@ public class MainActivity extends AppCompatActivity {
         //beforeApplyDI();
         //afterApplyDI();
         //afterApplyDI2();
-        afterApplyDI3();
+        //afterApplyDI3();
+        afterApplyDI4();
 
+    }
+
+    private void afterApplyDI4() {
+        DaggerSubjectComponent4.builder()
+                .bookName("CCC")
+                .bookAuthor("KKK")
+                .build()
+                .inject(this);
+        subject.read();
     }
 
     private void afterApplyDI3() {

@@ -2,10 +2,9 @@ package yskim.sample.mindorksdagger2;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
 
 @Module
-abstract class PureMathModule3 {
+abstract class DiscreteMathModule {
     @Binds
-    abstract Math bindMath(PureMath pureMath);
+    abstract Math bindMath(DiscreteMath discreteMath);
 }
