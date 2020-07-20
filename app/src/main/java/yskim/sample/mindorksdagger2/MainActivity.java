@@ -21,8 +21,15 @@ public class MainActivity extends AppCompatActivity {
         //afterApplyDI2();
         //afterApplyDI3();
         //afterApplyDI4();
-        afterApplyDI5();
+        //afterApplyDI5();
+        afterApplyApplicationDI();
 
+    }
+
+    private void afterApplyApplicationDI() {
+        SubjectComponent component = ((MyApplication) getApplication()).getSubjectComponent();
+        component.inject(this);
+        subject.read();
     }
 
     private void afterApplyDI5() {
@@ -60,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void afterApplyDI() {
-        SubjectComponent component = DaggerSubjectComponent.create();
+        //SubjectComponent component = DaggerSubjectComponent.create();
+        SubjectComponent component = DaggerSubjectComponent.builder().build();
         component.inject(this);
         subject.read();
     }

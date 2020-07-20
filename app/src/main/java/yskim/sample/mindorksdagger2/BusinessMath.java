@@ -3,7 +3,9 @@ package yskim.sample.mindorksdagger2;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class BusinessMath implements Math {
 
     private static final String TAG = "Subject - BusinessMath";

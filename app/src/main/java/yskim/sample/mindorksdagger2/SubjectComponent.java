@@ -4,6 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
+@Singleton
 @Component(modules = {ScienceModule.class, BusinessMathModule.class})
 public interface SubjectComponent {
 
