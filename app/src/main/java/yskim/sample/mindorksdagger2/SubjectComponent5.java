@@ -6,7 +6,7 @@ import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 
-@ActivityScope
+@Singleton
 @Component(modules = {ScienceModule.class, DiscreteMathModule.class})
 public interface SubjectComponent5 {
 

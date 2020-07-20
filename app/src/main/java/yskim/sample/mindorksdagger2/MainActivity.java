@@ -27,8 +27,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void afterApplyApplicationDI() {
-        SubjectComponent component = ((MyApplication) getApplication()).getSubjectComponent();
-        component.inject(this);
+//        SubjectComponent component = ((MyApplication) getApplication()).getSubjectComponent();
+//        component.inject(this);
+//        subject.read();
+        SubjectComponent4 component4 = ((MyApplication) getApplication()).getSubjectComponent4();
+        component4.inject(this);
         subject.read();
     }
 
