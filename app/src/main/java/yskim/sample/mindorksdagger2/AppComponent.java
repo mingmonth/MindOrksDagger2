@@ -8,5 +8,6 @@ import dagger.Component;
 @Component(modules = ScienceModule.class)
 public interface AppComponent {
 
-    Science getScience();
+    SubjectComponent4 getSubjectComponent4(PureMathModule pureMathModule);
+//    Science getScience();
 }

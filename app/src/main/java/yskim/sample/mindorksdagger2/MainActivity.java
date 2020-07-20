@@ -33,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
 //        SubjectComponent4 component4 = ((MyApplication) getApplication()).getSubjectComponent4();
 //        component4.inject(this);
 //        subject.read();
-        SubjectComponent4 component = DaggerSubjectComponent4.builder()
-                .bookName("PPP")
-                .bookAuthor("UUU")
-                .appComponent(((MyApplication) getApplication()).getAppComponent())
-                .build();
+//        SubjectComponent4 component = DaggerSubjectComponent4.builder()
+//                .bookName("PPP")
+//                .bookAuthor("UUU")
+//                .appComponent(((MyApplication) getApplication()).getAppComponent())
+//                .build();
+        SubjectComponent4 component = ((MyApplication) getApplication()).getAppComponent()
+                .getSubjectComponent4(new PureMathModule("pureMath"));
+
         component.inject(this);
         subject.read();
         subject2.read();
@@ -53,36 +56,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void afterApplyDI4() {
-        DaggerSubjectComponent4.builder()
-                .bookName("CCC")
-                .bookAuthor("KKK")
-                .build()
-                .inject(this);
-        subject.read();
+//        DaggerSubjectComponent4.builder()
+//                .bookName("CCC")
+//                .bookAuthor("KKK")
+//                .build()
+//                .inject(this);
+//        subject.read();
     }
 
     private void afterApplyDI3() {
-        DaggerSubjectComponent3.builder()
-                .bookName("ABC")
-                .build()
-                .inject(this);
-        subject.read();
+//        DaggerSubjectComponent3.builder()
+//                .bookName("ABC")
+//                .build()
+//                .inject(this);
+//        subject.read();
     }
 
     private void afterApplyDI2() {
-        DaggerSubjectComponent2.builder()
-                .pureMathModule(new PureMathModule("ABC"))
-                .build()
-                .inject(this);
-        subject.read();
+//        DaggerSubjectComponent2.builder()
+//                .pureMathModule(new PureMathModule("ABC"))
+//                .build()
+//                .inject(this);
+//        subject.read();
 
     }
 
     private void afterApplyDI() {
         //SubjectComponent component = DaggerSubjectComponent.create();
-        SubjectComponent component = DaggerSubjectComponent.builder().build();
-        component.inject(this);
-        subject.read();
+//        SubjectComponent component = DaggerSubjectComponent.builder().build();
+//        component.inject(this);
+//        subject.read();
     }
 
     private void beforeApplyDI() {
