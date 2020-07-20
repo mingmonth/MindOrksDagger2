@@ -20,8 +20,16 @@ public class MainActivity extends AppCompatActivity {
         //afterApplyDI();
         //afterApplyDI2();
         //afterApplyDI3();
-        afterApplyDI4();
+        //afterApplyDI4();
+        afterApplyDI5();
 
+    }
+
+    private void afterApplyDI5() {
+        DaggerSubjectComponent5.factory()
+                .create("AAA", "DDD")
+                .inject(this);
+        subject.read();
     }
 
     private void afterApplyDI4() {
