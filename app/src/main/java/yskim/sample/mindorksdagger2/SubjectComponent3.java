@@ -5,7 +5,8 @@ import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Component(modules = {ScienceModule.class, PureMathModule3.class})
+@ActivityScope
+@Component(dependencies = AppComponent.class, modules = PureMathModule3.class)
 public interface SubjectComponent3 {
 
     Subject getSubject();
@@ -17,6 +18,8 @@ public interface SubjectComponent3 {
 
         @BindsInstance
         Builder bookName(String bookName);
+
+        SubjectComponent3.Builder appComponent(AppComponent component);
 
         SubjectComponent3 build();
     }

@@ -6,7 +6,8 @@ import dagger.BindsInstance;
 import dagger.Component;
 import dagger.Provides;
 
-@Component(modules = {ScienceModule.class, PureMathModule.class})
+@ActivityScope
+@Component(dependencies = AppComponent.class, modules = PureMathModule.class)
 public interface SubjectComponent2 {
 
     Subject getSubject();

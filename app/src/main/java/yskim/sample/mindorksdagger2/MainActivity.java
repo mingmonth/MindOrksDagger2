@@ -30,17 +30,26 @@ public class MainActivity extends AppCompatActivity {
 //        SubjectComponent component = ((MyApplication) getApplication()).getSubjectComponent();
 //        component.inject(this);
 //        subject.read();
-        SubjectComponent4 component4 = ((MyApplication) getApplication()).getSubjectComponent4();
-        component4.inject(this);
+//        SubjectComponent4 component4 = ((MyApplication) getApplication()).getSubjectComponent4();
+//        component4.inject(this);
+//        subject.read();
+        SubjectComponent4 component = DaggerSubjectComponent4.builder()
+                .bookName("PPP")
+                .bookAuthor("UUU")
+                .appComponent(((MyApplication) getApplication()).getAppComponent())
+                .build();
+        component.inject(this);
         subject.read();
+        subject2.read();
+
     }
 
     private void afterApplyDI5() {
-        DaggerSubjectComponent5.factory()
-                .create("AAA", "DDD")
-                .inject(this);
-        subject.read();
-        subject2.read();
+//        DaggerSubjectComponent5.factory()
+//                .create("AAA", "DDD")
+//                .inject(this);
+//        subject.read();
+//        subject2.read();
     }
 
     private void afterApplyDI4() {

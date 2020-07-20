@@ -4,8 +4,8 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
-@Singleton
-@Component(modules = {ScienceModule.class, BusinessMathModule.class})
+@ActivityScope
+@Component(dependencies = AppComponent.class, modules = BusinessMathModule.class)
 public interface SubjectComponent {
 
     Subject getSubject();

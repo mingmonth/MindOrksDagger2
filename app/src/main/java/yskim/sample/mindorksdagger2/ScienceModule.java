@@ -1,5 +1,7 @@
 package yskim.sample.mindorksdagger2;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -7,6 +9,7 @@ import dagger.Provides;
 abstract class ScienceModule {
 
     @Provides
+    @Singleton
     static Science provideScience() {
         return new Science();
     }

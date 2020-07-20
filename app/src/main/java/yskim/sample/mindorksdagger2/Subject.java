@@ -5,6 +5,7 @@ import android.util.Log;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+@ActivityScope
 public class Subject {
 
     private static final String TAG = "Subject";

@@ -6,8 +6,8 @@ import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Singleton
-@Component(modules = {ScienceModule.class, DiscreteMathModule.class})
+@ActivityScope
+@Component(dependencies = AppComponent.class, modules = DiscreteMathModule.class)
 public interface SubjectComponent4 {
 
     Subject getSubject();
@@ -22,6 +22,8 @@ public interface SubjectComponent4 {
 
         @BindsInstance
         Builder bookAuthor(@Named("book author") String bookAuthor);
+
+        Builder appComponent(AppComponent component);
 
         SubjectComponent4 build();
     }

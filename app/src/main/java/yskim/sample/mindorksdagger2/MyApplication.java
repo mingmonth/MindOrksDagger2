@@ -5,18 +5,23 @@ import android.app.Application;
 public class MyApplication extends Application {
 
     //SubjectComponent subjectComponent;
-    SubjectComponent4 subjectComponent4;
+//    SubjectComponent4 component;
+    private AppComponent component;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        subjectComponent4 = DaggerSubjectComponent4.builder()
-                .bookName("LLL")
-                .bookAuthor("OOO")
-                .build();
+//        component = DaggerSubjectComponent4.builder()
+//                .bookName("LLL")
+//                .bookAuthor("OOO")
+//                .build();
+        component = DaggerAppComponent.create();
     }
 
-    SubjectComponent4 getSubjectComponent4() {
-        return subjectComponent4;
+//    SubjectComponent4 getSubjectComponent4() {
+//        return component;
+//    }
+    public AppComponent getAppComponent() {
+        return component;
     }
 }
