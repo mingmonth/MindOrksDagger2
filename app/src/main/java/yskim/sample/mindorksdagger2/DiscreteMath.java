@@ -4,7 +4,9 @@ import android.util.Log;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 
+@ActivityScope
 public class DiscreteMath implements Math {
 
     private static final String TAG = "Subject - DiscreteMath";

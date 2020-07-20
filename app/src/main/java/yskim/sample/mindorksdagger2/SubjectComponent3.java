@@ -1,5 +1,7 @@
 package yskim.sample.mindorksdagger2;
 
+import javax.inject.Singleton;
+
 import dagger.BindsInstance;
 import dagger.Component;
 

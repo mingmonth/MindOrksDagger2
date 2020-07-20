@@ -9,7 +9,7 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    Subject subject;
+    Subject subject, subject2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 .create("AAA", "DDD")
                 .inject(this);
         subject.read();
+        subject2.read();
     }
 
     private void afterApplyDI4() {
