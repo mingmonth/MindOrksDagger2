@@ -38,8 +38,16 @@ public class MainActivity extends AppCompatActivity {
 //                .bookAuthor("UUU")
 //                .appComponent(((MyApplication) getApplication()).getAppComponent())
 //                .build();
+//        SubjectComponent4 component = ((MyApplication) getApplication()).getAppComponent()
+//                .getSubjectComponent4(new PureMathModule("pureMath"));
+
+//        SubjectComponent4 component = ((MyApplication) getApplication()).getAppComponent()
+//                .getSubjectComponent4Builder()
+//                .bookName("PPP")
+//                .bookAuthor("UUU")
+//                .build();
         SubjectComponent4 component = ((MyApplication) getApplication()).getAppComponent()
-                .getSubjectComponent4(new PureMathModule("pureMath"));
+                .getSubjectComponent4Factory().create("PPP", "UUU");
 
         component.inject(this);
         subject.read();
@@ -92,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         //Math math = new Math();
         //Math math = new PureMath();
         Math math = new BusinessMath();
-        Science science = new Science();
+        Science science = new Science("TEST");
         Subject subject = new Subject(math, science);
         subject.read();
     }

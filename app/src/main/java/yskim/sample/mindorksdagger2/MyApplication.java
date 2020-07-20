@@ -15,7 +15,8 @@ public class MyApplication extends Application {
 //                .bookName("LLL")
 //                .bookAuthor("OOO")
 //                .build();
-        component = DaggerAppComponent.create();
+//        component = DaggerAppComponent.create();
+        component = DaggerAppComponent.factory().create(new ScienceModule("TEST"));
     }
 
 //    SubjectComponent4 getSubjectComponent4() {

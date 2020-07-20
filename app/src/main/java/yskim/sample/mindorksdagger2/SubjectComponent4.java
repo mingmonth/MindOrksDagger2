@@ -8,15 +8,15 @@ import dagger.Component;
 import dagger.Subcomponent;
 
 @ActivityScope
-@Subcomponent(modules = PureMathModule.class)
+@Subcomponent(modules = DiscreteMathModule.class)
 public interface SubjectComponent4 {
 
     Subject getSubject();
 
     void inject(MainActivity activity);
 
-//    @Component.Builder
-//    interface Builder{
+//    @Subcomponent.Builder
+//    interface Builder {
 //
 //        @BindsInstance
 //        Builder bookName(@Named("book name") String bookName);
@@ -24,8 +24,12 @@ public interface SubjectComponent4 {
 //        @BindsInstance
 //        Builder bookAuthor(@Named("book author") String bookAuthor);
 //
-//        Builder appComponent(AppComponent component);
-//
 //        SubjectComponent4 build();
 //    }
+
+    @Subcomponent.Factory
+    interface Factory {
+        SubjectComponent4 create(@BindsInstance @Named("book name") String bookName,
+                                 @BindsInstance @Named("book author") String bookAuthor);
+    }
 }

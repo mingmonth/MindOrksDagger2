@@ -6,11 +6,17 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-abstract class ScienceModule {
+class ScienceModule {
+
+    private String name;
+
+    public ScienceModule(String name) {
+        this.name = name;
+    }
 
     @Provides
     @Singleton
-    static Science provideScience() {
-        return new Science();
+    Science provideScience() {
+        return new Science(name);
     }
 }

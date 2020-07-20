@@ -23,5 +23,6 @@ public class Subject {
         math.mathBook();
         Log.d(TAG, "read: math:" + math);
         Log.d(TAG, "read: science:" + science);
+        Log.d(TAG, "read: science.name:" + science.getName());
     }
 }
